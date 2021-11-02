@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
+    <title>Weather Project</title>
+
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -23,88 +19,85 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="src/styles.css" />
-    <title>Weather App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <div class="date-time"></div>
-            <div class="temp">
-              <span class="current-temperature">14°C</span>
-              <h6 class="current-max-min">12°C/22°C</h6>
-            </div>
+      <div class="row">
+        <div class="col-3">
+          <div class="date-time"></div>
+          <div class="temp">
+            <span class="current-temperature">14°C</span>
+            <h6 class="current-max-min">12°C/22°C</h6>
           </div>
-          <div class="col-8">
-            <div class="row current-location">
-              <button>Current Location</button>
-            </div>
-            <div class="row">
-              <form>
-                <input
-                  type="text"
-                  id="type-location"
-                  placeholder="Enter location..."
-                  autocomplete="off"
-                  autofocus="on"
-                />
-              </form>
-            </div>
+        </div>
+        <div class="col-8">
+          <div class="row current-location">
+            <button>Current Location</button>
+          </div>
+          <div class="row">
+            <form>
+              <input
+                type="text"
+                id="type-location"
+                placeholder="Enter location..."
+                autocomplete="off"
+                autofocus="on"
+              />
+            </form>
+          </div>
 
-            <div class="row location">Lancaster</div>
+          <div class="row location">Lancaster</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="card" style="width: 9rem">
+          <div class="card-body">
+            <h5 class="card-title">Tomorrow</h5>
+            <p class="card-text">20°C</p>
+            <h6 class="card-subtitle mb-2 text-muted">12°C/22°C</h6>
           </div>
         </div>
 
-        <div class="row">
-          <div class="card" style="width: 9rem">
-            <div class="card-body">
-              <h5 class="card-title">Tomorrow</h5>
-              <p class="card-text">20°C</p>
-              <h6 class="card-subtitle mb-2 text-muted">12°C/22°C</h6>
-            </div>
+        <div class="card" style="width: 9rem">
+          <div class="card-body">
+            <h5 class="card-title">Wed</h5>
+            <p class="card-text">16°C</p>
+            <h6 class="card-subtitle mb-2 text-muted">11°C/23°C</h6>
           </div>
+        </div>
 
-          <div class="card" style="width: 9rem">
-            <div class="card-body">
-              <h5 class="card-title">Wed</h5>
-              <p class="card-text">16°C</p>
-              <h6 class="card-subtitle mb-2 text-muted">11°C/23°C</h6>
-            </div>
+        <div class="card" style="width: 9rem">
+          <div class="card-body">
+            <h5 class="card-title">Thurs</h5>
+            <p class="card-text">11°C</p>
+            <h6 class="card-subtitle mb-2 text-muted">9°C/15°C</h6>
           </div>
+        </div>
 
-          <div class="card" style="width: 9rem">
-            <div class="card-body">
-              <h5 class="card-title">Thurs</h5>
-              <p class="card-text">11°C</p>
-              <h6 class="card-subtitle mb-2 text-muted">9°C/15°C</h6>
-            </div>
+        <div class="card" style="width: 9rem">
+          <div class="card-body">
+            <h5 class="card-title">Fri</h5>
+            <p class="card-text">14°C</p>
+            <h6 class="card-subtitle mb-2 text-muted">10°C/18°C</h6>
           </div>
+        </div>
 
-          <div class="card" style="width: 9rem">
-            <div class="card-body">
-              <h5 class="card-title">Fri</h5>
-              <p class="card-text">14°C</p>
-              <h6 class="card-subtitle mb-2 text-muted">10°C/18°C</h6>
-            </div>
-          </div>
-
-          <div class="card" style="width: 9rem">
-            <div class="card-body">
-              <h5 class="card-title">Sat</h5>
-              <p class="card-text">13°C</p>
-              <h6 class="card-subtitle mb-2 text-muted">9°C/16°C</h6>
-            </div>
+        <div class="card" style="width: 9rem">
+          <div class="card-body">
+            <h5 class="card-title">Sat</h5>
+            <p class="card-text">13°C</p>
+            <h6 class="card-subtitle mb-2 text-muted">9°C/16°C</h6>
           </div>
         </div>
       </div>
-      <div class="code-link">
-        <a href="https://github.com/cryharddanceharder/weather-app"
-          >Open-Source Code</a
-        >
-        by Becky Foster
-      </div>
+    </div>
+    <div class="code-link">
+      <a href="https://github.com/cryharddanceharder/weather-app"
+        >Open-Source Code</a
+      >
+      by Becky Foster
     </div>
     <script src="src/index.js"></script>
   </body>
