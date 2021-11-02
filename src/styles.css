@@ -1,0 +1,90 @@
+body {
+  margin: 50px;
+  font-family: "Roboto Mono", monospace;
+  color: rgb(4, 4, 43);
+  border: 2px solid rgb(165, 165, 165);
+  border-radius: 10px;
+  padding: 20px 0 20px 20px;
+}
+
+.col-3 {
+  font-size: 60px;
+  text-align: center;
+  border: 2px;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgb(135, 174, 220) 1.5%,
+    rgb(255, 255, 255) 100.3%
+  );
+}
+
+.date-time {
+  font-size: 13px;
+  color: rgb(0, 0, 0);
+}
+
+.card {
+  margin: 20px 3px;
+  text-align: center;
+  border: white;
+  background: linear-gradient(
+    180deg,
+    rgb(135, 174, 220) 1.5%,
+    rgb(255, 255, 255) 100.3%
+  );
+}
+
+.card-text {
+  font-size: 30px;
+  font-weight: 500px;
+}
+
+.current-max-min {
+  color: grey;
+}
+
+.col-8 {
+  margin-left: 25px;
+  text-align: left;
+}
+
+.current-location {
+  font-size: 15px;
+  margin-top: 20px;
+  color: rgb(53, 52, 52);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.location {
+  font-size: 45px;
+  font-weight: 450;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  font-size: 16px;
+}
+
+button {
+  border-radius: 5px;
+  background-color: rgb(105, 151, 204);
+  color: white;
+  border: rgb(105, 151, 204) solid;
+  box-shadow: 3px 3px 3px grey;
+  margin: 0px 0px 20px;
+  padding: 2px 10px;
+  font-size: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+  background-color: white;
+  color: rgb(105, 151, 204);
+  border: rgb(105, 151, 204) solid;
+}
+
+.code-link {
+  font-weight: 400;
+}
