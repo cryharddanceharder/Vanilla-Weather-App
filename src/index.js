@@ -16,6 +16,11 @@ function currentTemp(response) {
   currentTempMin.innerHTML = `${Math.round(response.data.main.temp_min)}°C`;
   let currentTempMax = document.querySelector(".current-max");
   currentTempMax.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
+  let currentIcon = document.querySelector("#current-icon");
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function getPosition(position) {
