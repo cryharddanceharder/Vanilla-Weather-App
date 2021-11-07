@@ -21,6 +21,10 @@ function currentTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let weatherDescription = document.querySelector(".weather-description");
+  weatherDescription.innerHTML = `${response.data.weather[0].description}`;
+  let windSpeed = document.querySelector(".wind-speed");
+  windSpeed.innerHTML = `wind: ${Math.round(response.data.wind.speed)}m/s`;
 }
 
 function getPosition(position) {
