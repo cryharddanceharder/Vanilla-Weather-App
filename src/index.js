@@ -66,4 +66,4 @@ let hours = now.getHours();
 let minutes = now.getMinutes();
 
 let timeAndDate = document.querySelector(".date-time");
-timeAndDate.innerHTML = `${date}.${month}.${year}/${hours}:${minutes}`;
+timeAndDate.innerHTML = `${date}.${month}.${year} | ${hours}:${minutes}`;

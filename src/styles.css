@@ -20,8 +20,9 @@ body {
 }
 
 .date-time {
-  font-size: 13px;
+  font-size: 15px;
   color: rgb(0, 0, 0);
+  font-weight: bold;
 }
 
 .card {
@@ -87,4 +88,14 @@ button:hover {
 
 .code-link {
   font-weight: 400;
+}
+
+.weather-description,
+.wind-speed {
+  color: rgb(4, 4, 43);
+  font-size: 12px;
+}
+
+.current-weather-icon {
+  text-align: left;
 }
