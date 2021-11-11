@@ -8,8 +8,9 @@ function showCity(event) {
 
 function currentTemp(response) {
   console.log(response.data);
+  cTemp = response.data.main.temp;
   let showCurrentTemp = document.querySelector(".current-temperature");
-  showCurrentTemp.innerHTML = `${Math.round(response.data.main.temp)}°C`;
+  showCurrentTemp.innerHTML = `${Math.round(cTemp)}`;
   let location = document.querySelector(".location");
   location.innerHTML = `${response.data.name}`;
   let currentTempMin = document.querySelector(".current-min");
@@ -71,3 +72,15 @@ let minutes = now.getMinutes();
 
 let timeAndDate = document.querySelector(".date-time");
 timeAndDate.innerHTML = `${date}.${month}.${year} | ${hours}:${minutes}`;
+
+function showFTemp(event) {
+  event.preventDefault();
+  let fTemp = (cTemp * 9) / 5 + 32;
+  let tempElement = document.querySelector(".current-temperature");
+  tempElement.innerHTML = Math.round(fTemp);
+}
+
+let cTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFTemp);
