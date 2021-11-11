@@ -99,3 +99,7 @@ button:hover {
 .current-weather-icon {
   text-align: left;
 }
+
+.conversion {
+  font-size: 18px;
+}
