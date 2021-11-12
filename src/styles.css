@@ -103,3 +103,12 @@ button:hover {
 .conversion {
   font-size: 18px;
 }
+
+.temp .active {
+  color: rgb(4, 4, 43);
+  cursor: default;
+}
+
+.temp .active:hover {
+  text-decoration: none;
+}

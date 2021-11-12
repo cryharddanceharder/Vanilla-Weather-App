@@ -40,6 +40,23 @@ function buttonClick(button) {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
+function showFTemp(event) {
+  event.preventDefault();
+  let fTemp = (cTemp * 9) / 5 + 32;
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let tempElement = document.querySelector(".current-temperature");
+  tempElement.innerHTML = Math.round(fTemp);
+}
+
+function showCTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector(".current-temperature");
+  tempElement.innerHTML = Math.round(cTemp);
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
 let buttonPress = document.querySelector("button");
 buttonPress.addEventListener("click", buttonClick);
 
@@ -73,14 +90,10 @@ let minutes = now.getMinutes();
 let timeAndDate = document.querySelector(".date-time");
 timeAndDate.innerHTML = `${date}.${month}.${year} | ${hours}:${minutes}`;
 
-function showFTemp(event) {
-  event.preventDefault();
-  let fTemp = (cTemp * 9) / 5 + 32;
-  let tempElement = document.querySelector(".current-temperature");
-  tempElement.innerHTML = Math.round(fTemp);
-}
-
 let cTemp = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFTemp);
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", showCTemp);
