@@ -1,11 +1,3 @@
-function showCity(event) {
-  event.preventDefault();
-  let apiKey = "25181b26ceb1bd83a6773b0a70ee242f";
-  let search = document.querySelector("#type-location");
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(currentTemp);
-}
-
 function currentTemp(response) {
   console.log(response.data);
   cTemp = response.data.main.temp;
@@ -55,6 +47,14 @@ function showCTemp(event) {
   tempElement.innerHTML = Math.round(cTemp);
   celciusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+}
+
+function showCity(event) {
+  event.preventDefault();
+  let apiKey = "25181b26ceb1bd83a6773b0a70ee242f";
+  let search = document.querySelector("#type-location");
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(currentTemp);
 }
 
 let buttonPress = document.querySelector("button");
