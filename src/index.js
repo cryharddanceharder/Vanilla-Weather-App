@@ -61,7 +61,24 @@ function searchCity(city) {
   axios.get(apiUrl).then(currentTemp);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecastHTML =
+    forecastHTML +
+    `<div class="card" style="width: 9rem">
+            <div class="card-body">
+              <h5 class="card-title">Tomorrow</h5>
+              <p class="card-text">20°C</p>
+              <h6 class="card-subtitle mb-2 text-muted">12°C/22°C</h6>
+            </div>
+          </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 searchCity("Lancaster");
+
+displayForecast();
 
 let buttonPress = document.querySelector("button");
 buttonPress.addEventListener("click", buttonClick);
