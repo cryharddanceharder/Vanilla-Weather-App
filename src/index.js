@@ -51,11 +51,17 @@ function showCTemp(event) {
 
 function showCity(event) {
   event.preventDefault();
+  let input = document.querySelector("#type-location").value;
+  searchCity(input);
+}
+
+function searchCity(city) {
   let apiKey = "25181b26ceb1bd83a6773b0a70ee242f";
-  let search = document.querySelector("#type-location");
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${search.value}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(currentTemp);
 }
+
+searchCity("Lancaster");
 
 let buttonPress = document.querySelector("button");
 buttonPress.addEventListener("click", buttonClick);
