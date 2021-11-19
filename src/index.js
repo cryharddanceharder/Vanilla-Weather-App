@@ -63,16 +63,21 @@ function searchCity(city) {
 
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = "";
-  forecastHTML =
-    forecastHTML +
-    `<div class="card" style="width: 9rem">
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card" style="width: 9rem">
             <div class="card-body">
-              <h5 class="card-title">Tomorrow</h5>
+              <h5 class="card-title">${day}</h5>
               <p class="card-text">20°C</p>
               <h6 class="card-subtitle mb-2 text-muted">12°C/22°C</h6>
             </div>
           </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
