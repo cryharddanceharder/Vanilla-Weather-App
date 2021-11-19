@@ -81,7 +81,7 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-searchCity("Lancaster");
+searchCity("Manchester");
 
 displayForecast();
 
