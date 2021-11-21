@@ -71,24 +71,41 @@ function searchCity(city) {
 }
 
 function displayForecast(response) {
+  let forecast = response.data.daily;
   console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function (day) {
+
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="card" style="width: 9rem">
             <div class="card-body">
-              <h5 class="card-title">${day}</h5>
-              <p class="card-text">20°C</p>
-              <h6 class="card-subtitle mb-2 text-muted">12°C/22°C</h6>
+              <h5 class="card-title">${formatForecastDays(forecastDay.dt)}</h5>
+              <img
+                src="https://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
+                alt="weather icon"
+                class="card-text"
+              />
+              
+              <h6 class="card-subtitle mb-2 text-muted">${Math.round(
+                forecastDay.temp.min
+              )}°C/${Math.round(forecastDay.temp.max)}°C</h6>
             </div>
           </div>`;
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function formatForecastDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
 searchCity("Manchester");
