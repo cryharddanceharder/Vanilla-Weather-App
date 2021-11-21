@@ -2,7 +2,7 @@ function currentTemp(response) {
   console.log(response.data);
   cTemp = response.data.main.temp;
   let showCurrentTemp = document.querySelector(".current-temperature");
-  showCurrentTemp.innerHTML = `${Math.round(cTemp)}`;
+  showCurrentTemp.innerHTML = `${Math.round(cTemp)}°C`;
   let location = document.querySelector(".location");
   location.innerHTML = `${response.data.name}`;
   let currentTempMin = document.querySelector(".current-min");
