@@ -129,9 +129,3 @@ let timeAndDate = document.querySelector(".date-time");
 timeAndDate.innerHTML = `${date}.${month}.${year} | ${hours}:${minutes}`;
 
 let cTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFTemp);
-
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCTemp);
