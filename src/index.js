@@ -41,23 +41,6 @@ function buttonClick(button) {
   navigator.geolocation.getCurrentPosition(getPosition);
 }
 
-function showFTemp(event) {
-  event.preventDefault();
-  let fTemp = (cTemp * 9) / 5 + 32;
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let tempElement = document.querySelector(".current-temperature");
-  tempElement.innerHTML = Math.round(fTemp);
-}
-
-function showCTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector(".current-temperature");
-  tempElement.innerHTML = Math.round(cTemp);
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
 function showCity(event) {
   event.preventDefault();
   let input = document.querySelector("#type-location").value;
