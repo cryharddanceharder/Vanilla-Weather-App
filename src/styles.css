@@ -100,10 +100,6 @@ button:hover {
   text-align: left;
 }
 
-.conversion {
-  font-size: 18px;
-}
-
 .temp .active {
   color: rgb(4, 4, 43);
   cursor: default;
