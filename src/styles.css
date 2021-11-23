@@ -36,10 +36,6 @@ body {
   );
 }
 
-.card-text {
-  font-size: 30px;
-}
-
 .current-max-min {
   color: grey;
 }
