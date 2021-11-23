@@ -72,6 +72,7 @@ function displayForecast(response) {
                 }@2x.png"
                 alt="weather icon"
                 class="card-text"
+                width="75px"
               />
               
               <h6 class="card-subtitle mb-2 text-muted">${Math.round(
